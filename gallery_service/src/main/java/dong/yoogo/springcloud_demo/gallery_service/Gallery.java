@@ -5,8 +5,14 @@ import java.util.List;
 public class Gallery {
     private int id;
 
+    private List<Object> images;
+
     public int getId() {
         return id;
+    }
+
+    public List<Object> getImages() {
+        return images;
     }
 
     public void setId(int id) {
@@ -14,7 +20,6 @@ public class Gallery {
     }
 
     public void setImages(List<Object> images) {
-
-
+        this.images = images;
     }
 }

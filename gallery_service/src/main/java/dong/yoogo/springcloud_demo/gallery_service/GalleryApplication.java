@@ -14,14 +14,14 @@ import org.springframework.web.client.RestTemplate;
 @EnableCircuitBreaker
 public class GalleryApplication {
     public static void main(String[] args) {
-        SpringApplication.run(GalleryApplication.class,args);
+        SpringApplication.run(GalleryApplication.class, args);
     }
 
     @Configuration
-    class RestTemplateConfig{
+    class RestTemplateConfig {
         @Bean
         @LoadBalanced
-        public RestTemplate getTemplate(){
+        public RestTemplate getTemplate() {
             return new RestTemplate();
         }
     }
