@@ -1,5 +1,6 @@
 package dong.yoogo.springcloud_demo.gallery_service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ public class HomeController {
         return "Hello from gallery server on port : "+environment.getProperty("local.server.port");
     }
 
+    @HystrixCommand(fallbackMethod = "fallback")
     @RequestMapping("/{id}")
     public Gallery getGallery(@PathVariable final int id){
         Gallery gallery = new Gallery();
@@ -37,6 +39,12 @@ public class HomeController {
     @RequestMapping("/admin")
     public String homeAdmin(){
         return "This is the admin area of Gallery service running at port: " + environment.getProperty("local.server.port");
+    }
+
+    public Gallery fallback(int galleryId, Throwable hystrixCommand) {
+        Gallery gallery = new Gallery();
+        gallery.setId(galleryId);
+        return gallery;
     }
 }
 

@@ -1,10 +1,11 @@
 ### 系统服务
-Eureka 
-Zuul
+eureka_demo
+zuul_demo
 
 ### 应用服务
-Image_service
-Gallery_service - 调用 Image_Service, 通过 RestTemplate 
+image_service
+gallery_service - 调用 Image_Service, 通过 RestTemplate 
+auth_service - 认证服务
 
 
 ### 参考
