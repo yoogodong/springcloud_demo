@@ -37,7 +37,9 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 // must be an admin if trying to access admin area (authentication is also required here)
                 .antMatchers("/gallery" + "/admin/**").hasRole("ADMIN")
                 // Any other request must be authenticated
-                .anyRequest().authenticated();
+                .anyRequest().permitAll()
+//                .authenticated()
+                  ;
     }
 
     @Bean
