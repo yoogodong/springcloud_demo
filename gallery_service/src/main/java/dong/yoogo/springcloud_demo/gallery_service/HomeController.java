@@ -43,7 +43,7 @@ public class HomeController {
 
     public Gallery fallback(int galleryId, Throwable hystrixCommand) {
         Gallery gallery = new Gallery();
-        gallery.setId(galleryId);
+        gallery.setId(9999999);
         return gallery;
     }
 }
