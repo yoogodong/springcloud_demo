@@ -70,6 +70,10 @@ auth_service 在主类和application.yml 和普通的应用服务完全一样，
 zuul_service 安全相关的内容与 auth_service 类似，一个安全配置+一个Filter
 - 安全配置拦截除了 /auth 之外的url， 注意我在结尾处 把 authenticated() 改成了 permitAll() ,以暂时禁用 认证
 
+### Log Tracing 日志追踪
+只需要一个组件， spring-cloud-starter-sleuth
+
+-  日志信息，id 部分 [image-service,eb99d57faf4c3bd1,59039685343b4560,false]，分别是 [服务，跨服务id,服务内id,?]
 
 ### 参考
 https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-intro-to-microservices-part-1-c0d24cd422c 

@@ -1,5 +1,7 @@
 package dong.yoogo.springcloud_demo.image_service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +13,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class HomeController {
+
+    Logger logger = LoggerFactory.getLogger(HomeController.class);
+
     @Autowired
     private Environment environment;
 
     @RequestMapping("/images")
     public List<Image> getImages(){
+        logger.info("测试 sleuth");
 //        测试断路器是否工作
 //        if (1==1) throw new RuntimeException("yoogodong do this");
         List<Image> images = Arrays.asList(
