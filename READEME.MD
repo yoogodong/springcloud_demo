@@ -6,7 +6,8 @@
 - 网关，采用了独立的 zuul_demo
 - 负载均衡， 没有独立的服务
 - 认证服务，和 zuul_demo 及 auth_service 两个服务相关
-- 断路器，体现在 gallery_service 上
+- 断路器，hystrix 体现在 gallery_service 上
+- 日志追踪，sleuth 开箱即用,依赖配置在 parent pom 上
 
 ### 业务服务配置
 - 标注自己是 SpringBootApplicaiton,是 Eureka的客户
@@ -21,7 +22,7 @@
 ##### client 配置要点：
 - 组件 spring-cloud-starter-netflix-eureka-client
 - 主类 标注  @EnableEurekaClient
-- 配置自己的名称和端口，以及注册端点，注意注册端点不是管理端点
+- 配置自己的名称和端口，以及注册端点，注意eureka的注册端点不是管理端点
   - spring.application.name=gallery-service
   - server.port=8100
   - eureka.client.service-url.default-zone=http://localhost:8761/eureka
@@ -71,7 +72,7 @@ zuul_service 安全相关的内容与 auth_service 类似，一个安全配置+�
 - 安全配置拦截除了 /auth 之外的url， 注意我在结尾处 把 authenticated() 改成了 permitAll() ,以暂时禁用 认证
 
 ### Log Tracing 日志追踪
-只需要一个组件， spring-cloud-starter-sleuth
+开箱即用，只需要一个组件， spring-cloud-starter-sleuth
 
 -  日志信息，id 部分 [image-service,eb99d57faf4c3bd1,59039685343b4560,false]，分别是 [服务，跨服务id,服务内id,?]
 

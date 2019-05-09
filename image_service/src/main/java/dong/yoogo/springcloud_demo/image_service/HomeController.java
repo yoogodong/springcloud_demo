@@ -23,7 +23,11 @@ public class HomeController {
     public List<Image> getImages(){
         logger.info("测试 sleuth");
 //        测试断路器是否工作
-//        if (1==1) throw new RuntimeException("yoogodong do this");
+//        try {
+//            Thread.sleep(11000);
+//        } catch (InterruptedException e) {
+//            logger.debug("",e);
+//        }
         List<Image> images = Arrays.asList(
                 new Image(1, "Treehouse of Horror V", "https://www.imdb.com/title/tt0096697/mediaviewer/rm3842005760"),
                 new Image(2, "The Town", "https://www.imdb.com/title/tt0096697/mediaviewer/rm3698134272"),

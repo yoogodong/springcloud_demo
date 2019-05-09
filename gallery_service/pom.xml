@@ -7,6 +7,7 @@
     <artifactId>gallery_service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
     <parent>
         <groupId>dong.yoogo.springcloud_demo</groupId>
         <artifactId>parent</artifactId>
