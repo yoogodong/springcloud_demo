@@ -9,9 +9,9 @@ public class DetailPermission {
         this.simplePermission = simplePermission;
     }
 
-    public DetailPermission(String function, Account account, Action action) {
+    public DetailPermission(String function, Account account, Operation operation) {
         this.function = function;
-        this.simplePermission = new SimplePermission(account, action);
+        this.simplePermission = new SimplePermission(account, operation);
     }
 
     public String getFunction() {

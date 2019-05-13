@@ -2,19 +2,19 @@ package dong.yoogo.springcloud_demo.model;
 
 public class SimplePermission {
     private Account account;
-    private Action action;
+    private Operation operation;
 
-    public SimplePermission(Account account, Action action) {
+    public SimplePermission(Account account, Operation operation) {
         this.account = account;
-        this.action = action;
+        this.operation = operation;
     }
 
     public Account getAccount() {
         return account;
     }
 
-    public Action getAction() {
-        return action;
+    public Operation getOperation() {
+        return operation;
     }
 
     @Override
@@ -25,14 +25,14 @@ public class SimplePermission {
         SimplePermission that = (SimplePermission) o;
 
         if (!account.equals(that.account)) return false;
-        return action == that.action;
+        return operation == that.operation;
 
     }
 
     @Override
     public int hashCode() {
         int result = account.hashCode();
-        result = 31 * result + action.hashCode();
+        result = 31 * result + operation.hashCode();
         return result;
     }
 }

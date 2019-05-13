@@ -1,5 +1,5 @@
 package dong.yoogo.springcloud_demo.model;
 
-public enum Action {
+public enum Operation {
     APPLY, REVIEW, SEARCH
 }
